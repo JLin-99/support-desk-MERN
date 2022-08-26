@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getTickets, reset } from "../features/tickets/ticketSlice";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
+import TicketItem from "../components/TicketItem";
 
 export default function Tickets() {
   const { tickets, isLoading, isSuccess, isError } = useSelector(
@@ -38,9 +39,9 @@ export default function Tickets() {
           <div>Status</div>
           <div></div>
         </div>
-        {/* {tickets.map((ticket) => {
-          <TicketItem key={ticket._id} tick
-        })} */}
+        {tickets.map((ticket) => (
+          <TicketItem key={ticket._id} ticket={ticket} />
+        ))}
       </div>
     </>
   );
