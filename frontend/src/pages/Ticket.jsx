@@ -1,6 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { getTicket, closeTicket } from "../features/tickets/ticketSlice";
-import { getNotes, reset as notesReset } from "../features/notes/noteSlice";
+import {
+  getNotes,
+  createNote,
+  reset as notesReset,
+} from "../features/notes/noteSlice";
 import { FaPlus, FaWindowClose } from "react-icons/fa";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
@@ -58,7 +62,7 @@ export default function Ticket() {
   const onNoteSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Submit");
+    dispatch(createNote({ noteText, ticketId }));
     closeModal();
   };
 
