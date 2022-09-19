@@ -1,2 +1,2 @@
 # support-desk-react
-zrsupportdesk.herokuapp.com
+http://zrsupportdesk.herokuapp.com/
